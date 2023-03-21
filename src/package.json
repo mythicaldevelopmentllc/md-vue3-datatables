@@ -11,7 +11,8 @@
     "url": "git+https://github.com/mythicaldevelopmentllc/md-vue3-datatables.git"
   },
   "dependencies": {
-    "vue": "^3.0.0"
+    "vue": "^3.0.0",
+    "@heroicons/vue": "^2.0.13"
   },
   "keywords": [
     "vue3",

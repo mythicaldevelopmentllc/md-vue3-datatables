@@ -96,8 +96,8 @@ import {
   ChevronDoubleLeftIcon,
   ChevronDoubleRightIcon
 } from "@heroicons/vue/20/solid";
-import PaginationButtons from "@/lib/Datatables/Pagination/PaginationButtons.vue";
-import PaginationLink from "@/lib/Datatables/Pagination/PaginationLink.vue";
+import PaginationButtons from "./PaginationButtons.vue";
+import PaginationLink from "./PaginationLink.vue";
 
 const emit = defineEmits(["onPageSelection"]);
 const props = defineProps({

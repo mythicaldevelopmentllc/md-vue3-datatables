@@ -74,15 +74,15 @@
 
 <script setup>
   import { computed, ref, watch } from 'vue';
-  import THead from '@/lib/Datatables/THead.vue';
-  import TBody from '@/lib/Datatables/TBody.vue';
-  import TRow from '@/lib/Datatables/TRow.vue';
-  import THeadCell from '@/lib/Datatables/THeadCell.vue';
-  import TBodyCell from '@/lib/Datatables/TBodyCell.vue';
-  import Pagination from '@/lib/Datatables/Pagination/Pagination.vue';
-  import PaginationSize from '@/lib/Datatables/Pagination/PaginationSize.vue';
-  import Filter from '@/lib/Datatables/Filter/Filter.vue';
-  import { formatString } from '@/lib/Datatables/utils/helpers';
+  import THead from './THead.vue';
+  import TBody from './TBody.vue';
+  import TRow from './TRow.vue';
+  import THeadCell from './THeadCell.vue';
+  import TBodyCell from './TBodyCell.vue';
+  import Pagination from './Pagination/Pagination.vue';
+  import PaginationSize from './Pagination/PaginationSize.vue';
+  import Filter from './Filter/Filter.vue';
+  import { formatString } from './utils/helpers';
 
   const PER_PAGE = 5;
 
