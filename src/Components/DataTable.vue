@@ -1,75 +1,77 @@
 <template>
-  <div v-if="showPageSize || showFilter" class="flex justify-between gap-2 px-6">
-    <div class="col-span-6 md:col-span-12">
-      <PaginationSize
-        v-if="showPageSize"
-        :options="perPageOptions"
-        :value="tableQuery.per_page"
-        @onSelectPageSize="handleOnPageSizeChanged"
-      />
+  <div class="inline-block min-w-full py-2 align-middle">
+    <div v-if="showPageSize || showFilter" class="flex justify-between gap-2 px-6">
+      <div class="col-span-6 md:col-span-12">
+        <PaginationSize
+          v-if="showPageSize"
+          :options="perPageOptions"
+          :value="tableQuery.per_page"
+          @onSelectPageSize="handleOnPageSizeChanged"
+        />
+      </div>
+      <div class="col-span-6 md:col-span-12">
+        <Filter v-if="showFilter" :search="tableQuery.search" @handleSearch="handleFilterChange" />
+      </div>
     </div>
-    <div class="col-span-6 md:col-span-12">
-      <Filter v-if="showFilter" :search="tableQuery.search" @handleSearch="handleFilterChange" />
-    </div>
-  </div>
 
-  <Pagination
-    v-if="topPagination"
-    :total="totalData"
-    :perPage="perPage"
-    :currentPage="currentPage"
-    @onPageSelection="handlePageSelection"
-  />
+    <Pagination
+      v-if="topPagination"
+      :total="totalData"
+      :perPage="perPage"
+      :currentPage="currentPage"
+      @onPageSelection="handlePageSelection"
+    />
 
-  <div class="overflow-hidden shadow ring-1 ring-black ring-opacity-5">
-    <table class="min-w-full border-separate" style="border-spacing: 0">
-      <THead>
-        <slot name="thead">
-          <THeadCell
-            v-for="(label, key) in tableColumns"
-            :first="key === 0"
-            :last="key === tableColumns.length"
-            :key="`datatable-thead-th-${key}`"
-          >
-            {{ label }}
-          </THeadCell>
-        </slot>
-      </THead>
-
-      <TBody>
-        <TRow
-          v-for="(row, rowIndex) in tableRows"
-          :key="`datatable-row-${uniqueId()}-${rowIndex}`"
-          :rowIndex="rowIndex"
-          :totalRecords="tableRows.length"
-        >
-          <slot name="tbody" :index="rowIndex" :row="row">
-            <TBodyCell
+    <div class="overflow-hidden shadow ring-1 ring-black ring-opacity-5">
+      <table class="min-w-full border-separate" style="border-spacing: 0">
+        <THead>
+          <slot name="thead">
+            <THeadCell
               v-for="(label, key) in tableColumns"
-              :key="`datatable-tbody-td-${uniqueId()}-${key}`"
-              :rowIndex="rowIndex"
-              :totalRecords="tableRows.length"
-              :first="parseInt(key) === 0"
+              :first="key === 0"
+              :last="key === tableColumns.length"
+              :key="`datatable-thead-th-${key}`"
             >
-              {{ row[key] }}
-            </TBodyCell>
+              {{ label }}
+            </THeadCell>
           </slot>
-        </TRow>
+        </THead>
 
-        <TRow v-if="tableRows.length === 0" :rowIndex="0">
-          <slot name="empty" />
-        </TRow>
-      </TBody>
-    </table>
+        <TBody>
+          <TRow
+            v-for="(row, rowIndex) in tableRows"
+            :key="`datatable-row-${uniqueId()}-${rowIndex}`"
+            :rowIndex="rowIndex"
+            :totalRecords="tableRows.length"
+          >
+            <slot name="tbody" :index="rowIndex" :row="row">
+              <TBodyCell
+                v-for="(label, key) in tableColumns"
+                :key="`datatable-tbody-td-${uniqueId()}-${key}`"
+                :rowIndex="rowIndex"
+                :totalRecords="tableRows.length"
+                :first="parseInt(key) === 0"
+              >
+                {{ row[key] }}
+              </TBodyCell>
+            </slot>
+          </TRow>
+
+          <TRow v-if="tableRows.length === 0" :rowIndex="0">
+            <slot name="empty" />
+          </TRow>
+        </TBody>
+      </table>
+    </div>
+
+    <Pagination
+      v-if="bottomPagination"
+      :total="totalData"
+      :perPage="perPage"
+      :currentPage="currentPage"
+      @onPageSelection="handlePageSelection"
+    />
   </div>
-
-  <Pagination
-    v-if="bottomPagination"
-    :total="totalData"
-    :perPage="perPage"
-    :currentPage="currentPage"
-    @onPageSelection="handlePageSelection"
-  />
 </template>
 
 <script setup>
