@@ -1,2 +1,4 @@
-# md-vue3-datatables
-Set of simple datatable components for Vue 3
+# Vue 3 Datatables
+---
+
+Set of simple datatable components for Vue 3.
