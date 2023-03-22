@@ -1,10 +1,13 @@
 {
   "name": "@mythicaldev/md-vue3-datatables",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Set of simple datatable components for Vue 3.",
   "main": "./src/index.js",
   "files": [
-    "src/**/*.vue"
+    "src/index.js",
+    "src/**/*.vue",
+    "src/**/*.js",
+    "examples/*"
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
