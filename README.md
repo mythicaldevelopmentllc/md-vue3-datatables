@@ -10,6 +10,20 @@ Set of simple datatable components for Vue 3.
 npm install @mythicaldev/md-vue3-datatables
 ```
 
+#### OR
+
+```shell
+npm i @mythicaldev/md-vue3-datatables
+```
+
+## Tailwind configuration
+
+You will need to update your tailwind.config.js file to include the following in your `content` array.
+
+```javascript
+./node_modules/@mythicaldev/md-vue3-datatables/**/*.vue
+```
+
 ## Quick Start
 
 Bare bones and basic implementation. 
