@@ -1,6 +1,6 @@
 {
   "name": "@mythicaldev/md-vue3-datatables",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Set of simple datatable components for Vue 3.",
   "main": "./src/index.js",
   "files": [
