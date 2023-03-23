@@ -35,7 +35,7 @@ Bare bones and basic implementation.
 
 <script setup>
   // Import the main DataTable component
-  import { DataTable } from 'md-vue3-datatables';
+  import { DataTable } from '@mythicaldev/md-vue3-datatables';
 
   // Give it some data!
   const data = [
@@ -90,7 +90,7 @@ This is often useful for an action row.
 
 <script setup>
   // Import both the main DataTable component and the TBodyCell component
-  import { DataTable, TBodyCell } from 'md-vue3-datatables';
+  import { DataTable, TBodyCell } from '@mythicaldev/md-vue3-datatables';
 
   // Give it some data!
   const data = [
@@ -131,7 +131,7 @@ data cells.
 
 <script setup>
   // Import both the main DataTable component and the TBodyCell component
-  import { DataTable, TBodyCell } from 'md-vue3-datatables';
+  import { DataTable, TBodyCell } from '@mythicaldev/md-vue3-datatables';
 
   // Custom Column array
   const columns = ['Authors Name', 'Example Best Seller', 'Theme'];
@@ -179,7 +179,7 @@ header and data cells.
 
 <script setup>
   // Import the main DataTable, THeadCell, and TBodyCell components
-  import { DataTable, THeadCell, TBodyCell } from 'md-vue3-datatables';
+  import { DataTable, THeadCell, TBodyCell } from '@mythicaldev/md-vue3-datatables';
 
   // Give it some data!
   const data = [
@@ -223,7 +223,7 @@ You can also add pagination and filtering.
 
 <script setup>
   // Import the main DataTable, THeadCell, and TBodyCell components
-  import { DataTable, THeadCell, TBodyCell } from 'md-vue3-datatables';
+  import { DataTable, THeadCell, TBodyCell } from '@mythicaldev/md-vue3-datatables';
 
   // Pagination Data
   const pagination = {
@@ -271,7 +271,7 @@ You can use this event to load data from an external API.
 <script setup>
   import { reactive } from 'vue';
   // Import the main DataTable component
-  import { DataTable } from 'md-vue3-datatables';
+  import { DataTable } from '@mythicaldev/md-vue3-datatables';
 
   const state = reactive({
     data: [],
