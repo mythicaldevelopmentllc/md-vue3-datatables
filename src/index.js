@@ -1,9 +1,9 @@
-import DataTable from './components/DataTable.vue';
-import TBody from './components/TBody.vue';
-import TBodyCell from './components/TBodyCell.vue';
-import THead from './components/THead.vue';
-import THeadCell from './components/THeadCell.vue';
-import TRow from './components/TRow.vue';
+import DataTable from './Components/DataTable.vue';
+import TBody from './Components/TBody.vue';
+import TBodyCell from './Components/TBodyCell.vue';
+import THead from './Components/THead.vue';
+import THeadCell from './Components/THeadCell.vue';
+import TRow from './Components/TRow.vue';
 
 export default {
   install:(app, options) => {
