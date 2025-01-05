@@ -1,2 +1,10 @@
 $md-dt-namespace: "MD-Datatables" !default;
 $md-dt-wrapper-padding: 0.5rem;
+$md-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+$md-shadow-color: 0 0 #000000;
+$md-shadow-colored: 0 1px 2px 0 var($md-shadow-color);
+$md-ring-shadow: 0 0 #000000;
+$md-ring-offset-shadow: 0 0 #000000;
+$md-border-opacity: 1;
+$md-bg-opacity: 1;
+$md-text-opacity: 1;

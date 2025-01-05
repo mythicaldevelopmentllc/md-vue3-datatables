@@ -3,7 +3,6 @@ import {
   h,
   ref,
   type Ref,
-  toRef
 } from "vue";
 import { CSS_NAMESPACE } from "../../constants";
 

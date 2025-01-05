@@ -11,6 +11,7 @@
   "types": "dist/types/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "build:prod": "npm run prebuild && npm run build:css && npm run build:tsc",
     "prebuild": "rimraf ./dist",
     "build:css": "cross-env NODE_ENV=production node_modules/.bin/sass src/scss/index.scss dist/main.css --style compressed",
     "build:tsc": "NODE_ENV=production tsc --project tsconfig.json"
