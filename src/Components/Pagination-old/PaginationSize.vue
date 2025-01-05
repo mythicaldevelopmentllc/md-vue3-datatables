@@ -1,3 +1,15 @@
+<script setup lang="ts">
+const emit = defineEmits(['onSelectPageSize']);
+defineProps<{
+  value: number | string,
+  options: number[],
+}>();
+
+const handleOnSelectPageSize = (size: number) => {
+  emit('onSelectPageSize', size);
+}
+</script>
+
 <template>
     <div class="flex w-full justify-start sm:w-auto">
         <div>
@@ -11,29 +23,11 @@
                 @input="handleOnSelectPageSize"
             >
                 <option v-for="size in options"
-                        :key="`per_page${size}`"
+                        :key="`per_page_${size}`"
                         :value="size"
                         :selected="size === value"
-                        v-text="size" />
+                >{{ size }}</option>
             </select>
         </div>
     </div>
 </template>
-
-<script setup>
-const emit = defineEmits(['onSelectPageSize']);
-const props = defineProps({
-    value: {
-        type: [Number, String],
-        required: true,
-    },
-    options: {
-        type: Array,
-        required: true,
-    }
-});
-
-const handleOnSelectPageSize = (size) => {
-    emit('onSelectPageSize', size);
-}
-</script>
