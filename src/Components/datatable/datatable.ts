@@ -49,7 +49,6 @@ export const DataTable = defineComponent({
       watch(
         () => tableQuery.value,
         () => {
-          console.log('datatables.watch', tableQuery.value)
           fireLoadData();
         },
         {

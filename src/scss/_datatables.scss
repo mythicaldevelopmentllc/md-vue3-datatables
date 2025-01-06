@@ -84,7 +84,7 @@
 .#{v.$md-dt-namespace}__tableBodyCell {
   --md-text-opacity: #{v.$md-text-opacity};
 
-  white-space: nowrap;
+  white-space: break-spaces;
   padding: 1rem 0.875rem 1rem 1rem;
   font-size: 0.875rem;
   line-height: 1.25rem;
