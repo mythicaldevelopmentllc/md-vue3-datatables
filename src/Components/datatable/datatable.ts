@@ -6,19 +6,20 @@ import {
   PropType,
   ref,
   type Ref,
-  toRef,
   watch
 } from "vue";
 import { PageSizeFilter } from "../pagesize-filter/pagesize-filter";
 import { CSS_NAMESPACE, DEFAULT_PAGE_OPTIONS, DEFAULT_PER_PAGE } from "../../constants";
 import { Pagination } from "../pagination/pagination";
+import { DatatableContainer } from "./datatable-container";
 import { PaginationData, TableQuery } from "../../types/datatables";
 
 export const DataTable = defineComponent({
   name: 'DataTable',
   emits: ['loadData'],
   props: {
-    rows: { type: [Object], required: true },
+    rows: { type: Array as PropType<object[]>, required: true },
+    columns: { type: [[String], Object] as PropType<string[]|null>, optional: true, default: null },
     showFilter: { type: Boolean, optional: true, default: false },
     showPageSize: { type: Boolean, optional: true, default: false },
     pageOptions: { type: Array as PropType<number[]>, required: false, default: DEFAULT_PAGE_OPTIONS },
@@ -26,7 +27,7 @@ export const DataTable = defineComponent({
     bottomPagination: { type: Boolean, optional: true, default: false },
     pagination: { type: [Object, Object] as PropType<PaginationData | null>, optional: true, default: null },
   },
-  setup(props, { emit }) {
+  setup(props, { emit, slots }) {
 
     const tableQuery: Ref<TableQuery> = ref({
       page: props.pagination?.page || 1,
@@ -87,7 +88,12 @@ export const DataTable = defineComponent({
         }));
       }
 
-      // TODO: IMPLEMENT THE ACTUAL TABLE!!!
+      // THE ACTUAL TABLE!!!
+      children.push(h(DatatableContainer, {
+        rows: props.rows,
+        columns: props.columns
+      }, slots));
+
       if (props.bottomPagination) {
         children.push(h(Pagination, {
           'total': totalRows.value,

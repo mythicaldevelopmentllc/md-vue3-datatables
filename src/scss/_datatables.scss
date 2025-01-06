@@ -6,7 +6,6 @@
   padding-top: #{v.$md-dt-wrapper-padding};
   padding-bottom: #{v.$md-dt-wrapper-padding};
   vertical-align: middle;
-  background-color: blue;
 }
 
 .#{v.$md-dt-namespace}__srOnly {
@@ -21,4 +20,80 @@
   border-width: 0;
 }
 
+.#{v.$md-dt-namespace}__container {
+  overflow: hidden;
+  box-shadow:
+          0 1px 3px 0 rgb(0 0 0 / 0.1),
+          0 1px 2px -1px rgb(0 0 0 / 0.1),
+          0 0 0 1px rgb(0 0 0 / 0.05),
+          0 0 0 0 rgb(255 255 255);
+}
 
+.#{v.$md-dt-namespace}__table {
+  min-width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.#{v.$md-dt-namespace}__tableHead {
+  --md-border-opacity: #{v.$md-border-opacity};
+  --md-bg-opacity: 0.75;
+  --md-text-opacity: #{v.$md-text-opacity};
+
+  position: sticky;
+  top: 0;
+  z-index: 10;
+
+  border-bottom-width: 1px;
+  border-color: rgb(209 213 219 / var(--md-border-opacity, 1));
+
+  background-color: rgb(249 250 251 / var(--md-bg-opacity, 1));
+
+  padding-top: 0.875rem;
+  padding-bottom: 0.875rem;
+
+  text-align: left;
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.25rem;
+
+  color: rgb(17 24 39 / var(--md-text-opacity, 1));
+  backdrop-filter: blur(8px);
+}
+
+.#{v.$md-dt-namespace}__tableRow {
+  --md-bg-opacity: #{v.$md-bg-opacity};
+
+  &:hover {
+    background-color: rgb(243 244 246 / var(--md-bg-opacity, 1));
+  }
+}
+
+.#{v.$md-dt-namespace}__tableRowEven {
+  --md-bg-opacity: #{v.$md-bg-opacity};
+
+  background-color: rgb(255 255 255 / var(--md-bg-opacity, 1));
+}
+
+.#{v.$md-dt-namespace}__tableRowOdd {
+  --md-bg-opacity: #{v.$md-bg-opacity};
+
+  background-color: rgb(249 250 251 / var(--md-bg-opacity, 1));
+}
+
+.#{v.$md-dt-namespace}__tableBodyCell {
+  --md-text-opacity: #{v.$md-text-opacity};
+
+  white-space: nowrap;
+  padding: 1rem 0.875rem 1rem 1rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+
+  color: rgb(107 114 128 / var(--md-text-opacity, 1));
+}
+
+.#{v.$md-dt-namespace}__tableBodyCellFirst {
+  --md-text-opacity: #{v.$md-text-opacity};
+
+  color: rgb(17 24 39 / var(--md-text-opacity, 1)) !important;
+}

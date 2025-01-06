@@ -6,6 +6,7 @@ import { ChevronDoubleLeftIcon } from "../../icons/chevron-double-left-icon";
 import { ChevronLeftIcon } from "../../icons/chevron-left-icon";
 import { ChevronRightIcon } from "../../icons/chevron-right-icon";
 import { ChevronDoubleRightIcon } from "../../icons/chevron-double-right-icon";
+import { PaginationButtons } from "./pagination-buttons";
 
 const LEFT = "left";
 const RIGHT = 'right';
@@ -190,7 +191,10 @@ export const PaginationContainer = defineComponent({
           end: currentEnd.value,
           total: props.total
         }),
-        h('div', { 'style': 'display: flex;' }, buttons),
+        h('div',
+          { 'style': 'display: flex;' },
+          h(PaginationButtons, null, () => buttons)
+        ),
       ]);
     }
   }
