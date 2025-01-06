@@ -20,13 +20,10 @@
     "type": "git",
     "url": "git+https://github.com/mythicaldevelopmentllc/md-vue3-datatables.git"
   },
-  "dependencies": {
-    "@heroicons/vue": "^2.2.0"
-  },
+  "dependencies": {},
   "devDependencies": {
     "cross-env": "^7.0.3",
     "sass-embedded": "^1.83.1",
-    "tailwindcss": "^3.4.17",
     "typescript": "~5.6.3",
     "vue": "^3.5.13",
     "vue-tsc": "^2.2.0"
@@ -39,8 +36,7 @@
     "table",
     "pagination",
     "searchable",
-    "filter",
-    "tailwindcss"
+    "filter"
   ],
   "author": "Jeremiah Poisson <jpoisson@mythicaldev.com>",
   "license": "MIT",
